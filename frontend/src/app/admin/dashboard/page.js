@@ -70,7 +70,7 @@ export default function AdminDashboard() {
     return (
       <AdminLayout>
         <div className="flex items-center justify-center h-96">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
         </div>
       </AdminLayout>
     );
@@ -80,7 +80,7 @@ export default function AdminDashboard() {
     <AdminLayout>
       <div className="space-y-6">
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl p-6 text-white">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-6 text-white">
           <h1 className="text-2xl font-bold">Welcome back, {user?.name}!</h1>
           <p className="mt-2 opacity-90">
             {isSuperAdmin ? 'Super Admin' : 'Admin'} Dashboard • Last login: Today
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
             </div>
             <button
               onClick={() => router.push('/admin/users')}
-              className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
             >
               View All
             </button>
@@ -114,26 +114,26 @@ export default function AdminDashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <button
                 onClick={() => router.push('/admin/users')}
-                className="p-4 border rounded-lg hover:border-primary-500 hover:bg-primary-50 transition group"
+                className="p-4 border rounded-lg hover:border-blue-500 hover:bg-blue-50 transition group"
               >
-                <Users className="h-8 w-8 text-primary-600 mb-2 group-hover:scale-110 transition" />
+                <Users className="h-8 w-8 text-blue-600 mb-2 group-hover:scale-110 transition" />
                 <h3 className="font-medium">Manage Users</h3>
                 <p className="text-sm text-gray-600">Add, edit, or remove users</p>
               </button>
               
               <button
                 onClick={() => router.push('/super-admin/roles')}
-                className="p-4 border rounded-lg hover:border-primary-500 hover:bg-primary-50 transition group"
+                className="p-4 border rounded-lg hover:border-blue-500 hover:bg-blue-50 transition group"
               >
-                <Shield className="h-8 w-8 text-primary-600 mb-2 group-hover:scale-110 transition" />
+                <Shield className="h-8 w-8 text-blue-600 mb-2 group-hover:scale-110 transition" />
                 <h3 className="font-medium">Role Management</h3>
                 <p className="text-sm text-gray-600">Configure roles & permissions</p>
               </button>
               
               <button
-                className="p-4 border rounded-lg hover:border-primary-500 hover:bg-primary-50 transition group"
+                className="p-4 border rounded-lg hover:border-blue-500 hover:bg-blue-50 transition group"
               >
-                <Activity className="h-8 w-8 text-primary-600 mb-2 group-hover:scale-110 transition" />
+                <Activity className="h-8 w-8 text-blue-600 mb-2 group-hover:scale-110 transition" />
                 <h3 className="font-medium">System Analytics</h3>
                 <p className="text-sm text-gray-600">View system performance</p>
               </button>

@@ -33,18 +33,18 @@ const UserSidebar = () => {
       icon: User,
       current: pathname === '/user/profile',
     },
-    {
-      name: 'Notifications',
-      href: '/user/notifications',
-      icon: Bell,
-      current: pathname === '/user/notifications',
-    },
-    {
-      name: 'Settings',
-      href: '/user/settings',
-      icon: Settings,
-      current: pathname === '/user/settings',
-    },
+    // {
+    //   name: 'Notifications',
+    //   href: '/user/notifications',
+    //   icon: Bell,
+    //   current: pathname === '/user/notifications',
+    // },
+    // {
+    //   name: 'Settings',
+    //   href: '/user/settings',
+    //   icon: Settings,
+    //   current: pathname === '/user/settings',
+    // },
   ];
 
   const handleLogout = () => {
@@ -65,21 +65,6 @@ const UserSidebar = () => {
           <ChevronLeft className="h-4 w-4" />
         )}
       </button>
-
-      {/* User Info */}
-      <div className="p-4 border-b">
-        <div className="flex items-center space-x-3">
-          <div className="bg-blue-100 p-2 rounded-full">
-            <User className="h-8 w-8 text-blue-600" />
-          </div>
-          {!collapsed && (
-            <div>
-              <p className="text-sm font-medium text-gray-900 truncate">{user?.name}</p>
-              <p className="text-xs text-gray-500">Standard User</p>
-            </div>
-          )}
-        </div>
-      </div>
 
       {/* Navigation */}
       <nav className="p-4">
@@ -102,7 +87,7 @@ const UserSidebar = () => {
         </ul>
 
         {/* Home Button */}
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <Link
             href="/"
             className={`flex items-center ${collapsed ? 'justify-center' : 'px-3'} py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors`}
@@ -110,10 +95,10 @@ const UserSidebar = () => {
             <Home className="h-5 w-5" />
             {!collapsed && <span className="ml-3">Home</span>}
           </Link>
-        </div>
+        </div> */}
 
         {/* Logout Button */}
-        <div className="mt-8 pt-4 border-t">
+        {/* <div className="mt-8 pt-4 border-t">
           <button
             onClick={handleLogout}
             className={`flex items-center ${collapsed ? 'justify-center' : 'px-3'} w-full py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors`}
@@ -121,7 +106,7 @@ const UserSidebar = () => {
             <LogOut className="h-5 w-5" />
             {!collapsed && <span className="ml-3">Logout</span>}
           </button>
-        </div>
+        </div> */}
       </nav>
     </aside>
   );

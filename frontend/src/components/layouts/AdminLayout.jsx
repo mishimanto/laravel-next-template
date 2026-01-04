@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/useAuth';
 import AdminSidebar from '@/components/admin/AdminSidebar';
@@ -10,6 +10,7 @@ import { Toaster } from 'react-hot-toast';
 export default function AdminLayout({ children }) {
   const router = useRouter();
   const { isAuthenticated, isAdmin, loading } = useAuth();
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   useEffect(() => {
     if (!loading && (!isAuthenticated || !isAdmin)) {
@@ -34,8 +35,13 @@ export default function AdminLayout({ children }) {
       <Toaster position="top-right" />
       <AdminHeader />
       <div className="flex">
-        <AdminSidebar />
-        <main className="flex-1 p-6 ml-64 mt-16">
+        <AdminSidebar 
+          collapsed={sidebarCollapsed}
+          onToggle={() => setSidebarCollapsed(!sidebarCollapsed)}
+        />
+        <main className={`flex-1 p-6 transition-all duration-300 ${
+          sidebarCollapsed ? 'ml-20' : 'ml-64'
+        } mt-16`}>
           {children}
         </main>
       </div>

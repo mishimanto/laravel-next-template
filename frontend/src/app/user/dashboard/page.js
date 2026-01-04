@@ -48,7 +48,7 @@ export default function UserDashboard() {
   if (loading || loadingData) {
     return (
       <div className="flex items-center justify-center h-96">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     );
   }
@@ -56,7 +56,7 @@ export default function UserDashboard() {
   return (
     <div className="space-y-6">
       {/* Welcome Banner */}
-      <div className="bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl p-6 text-white">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-6 text-white">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold">Welcome, {user?.name}!</h1>
@@ -76,8 +76,8 @@ export default function UserDashboard() {
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Account Information</h2>
           <div className="space-y-4">
             <div className="flex items-center">
-              <div className="bg-primary-100 p-2 rounded-lg mr-4">
-                <UserCircle className="h-5 w-5 text-primary-600" />
+              <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                <UserCircle className="h-5 w-5 text-blue-600" />
               </div>
               <div>
                 <p className="text-sm text-gray-600">Full Name</p>
@@ -85,8 +85,8 @@ export default function UserDashboard() {
               </div>
             </div>
             <div className="flex items-center">
-              <div className="bg-primary-100 p-2 rounded-lg mr-4">
-                <Mail className="h-5 w-5 text-primary-600" />
+              <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                <Mail className="h-5 w-5 text-blue-600" />
               </div>
               <div>
                 <p className="text-sm text-gray-600">Email Address</p>
@@ -94,8 +94,8 @@ export default function UserDashboard() {
               </div>
             </div>
             <div className="flex items-center">
-              <div className="bg-primary-100 p-2 rounded-lg mr-4">
-                <Shield className="h-5 w-5 text-primary-600" />
+              <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                <Shield className="h-5 w-5 text-blue-600" />
               </div>
               <div>
                 <p className="text-sm text-gray-600">Account Type</p>
@@ -104,8 +104,8 @@ export default function UserDashboard() {
             </div>
             {user?.phone && (
               <div className="flex items-center">
-                <div className="bg-primary-100 p-2 rounded-lg mr-4">
-                  <Phone className="h-5 w-5 text-primary-600" />
+                <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                  <Phone className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
                   <p className="text-sm text-gray-600">Phone Number</p>
@@ -170,8 +170,8 @@ export default function UserDashboard() {
         <div className="space-y-4">
           {dashboardData?.recent_activity?.map((activity) => (
             <div key={activity.id} className="flex items-center p-4 border rounded-lg hover:bg-gray-50">
-              <div className="bg-primary-100 p-2 rounded-lg mr-4">
-                <Activity className="h-5 w-5 text-primary-600" />
+              <div className="bg-blue-100 p-2 rounded-lg mr-4">
+                <Activity className="h-5 w-5 text-blue-600" />
               </div>
               <div className="flex-1">
                 <p className="font-medium">{activity.activity}</p>

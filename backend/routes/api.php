@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
+use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Api\Admin\UserManagementController;
 use App\Http\Controllers\Api\User\DashboardController as UserDashboardController;
@@ -44,5 +45,12 @@ Route::middleware(['jwt.auth'])->group(function () {
     // Super Admin only routes - TEMPORARILY remove role middleware
     Route::prefix('super-admin')->group(function () {
         Route::apiResource('roles', \App\Http\Controllers\Api\Admin\RoleController::class);
+    });
+
+    Route::prefix('user')->group(function () {
+        Route::get('/', [ProfileController::class, 'show']);
+        Route::put('/profile', [ProfileController::class, 'update']);
+        Route::post('/avatar', [ProfileController::class, 'updateAvatar']);
+        Route::put('/password', [ProfileController::class, 'changePassword']);
     });
 });

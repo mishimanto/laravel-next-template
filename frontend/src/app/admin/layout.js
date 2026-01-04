@@ -20,7 +20,7 @@ export default function AdminLayout({ children }) {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       </div>
     );
   }
@@ -32,10 +32,10 @@ export default function AdminLayout({ children }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <Toaster position="top-right" />
-      <AdminHeader />
+      {/* <AdminHeader /> */}
       <div className="flex">
-        <AdminSidebar />
-        <main className="flex-1 p-6 ml-64 mt-16">
+        {/* <AdminSidebar /> */}
+        <main className="flex-1">
           {children}
         </main>
       </div>
